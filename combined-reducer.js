@@ -1,4 +1,4 @@
-import layoutCombinedReducer from './reducers/index.js'
+import layoutCombinedReducer from './redux/indexReducer.js'
 import { combineReducers } from 'redux'
 
 let reducers = [layoutCombinedReducer];
