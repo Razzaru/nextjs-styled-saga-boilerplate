@@ -1,9 +1,9 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 
-import combineReducer from './combined-reducer';
 import rootSaga from './saga';
+import layoutCombineReducer from './redux/indexReducer.js';
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -16,7 +16,7 @@ const bindMiddleware = (middleware) => {
 function configureStore() {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
-    combineReducer,
+    combineReducers(layoutCombineReducer),
     {},
     bindMiddleware([sagaMiddleware, logger]),
   );

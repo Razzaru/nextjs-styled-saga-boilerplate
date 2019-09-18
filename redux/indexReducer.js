@@ -1,8 +1,7 @@
 import home from './home/reducer';
 
 const layout = {
-  ...{},
-  home,
+  home
 };
 
 export default layout;
