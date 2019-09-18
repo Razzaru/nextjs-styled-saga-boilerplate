@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 const defaultUrl = null;
 
 export default async ({
-  endpoint, headers = {}, method = 'GET', body = {}
+  endpoint, headers = {}, method = 'GET', body = {},
 }) => {
   const stringifiedBody = JSON.stringify(body);
 

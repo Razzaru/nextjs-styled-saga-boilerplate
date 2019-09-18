@@ -1,7 +1,5 @@
-const Index = () => {
-    return (
-        <h1>Hello to our App!</h1>
-    )
-};
+import Home from "../components/Home";
+
+const Index = () => <Home/>;
 
 export default Index;

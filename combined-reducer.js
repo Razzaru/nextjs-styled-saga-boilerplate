@@ -1,14 +1,15 @@
-import layoutCombinedReducer from './redux/indexReducer.js'
-import { combineReducers } from 'redux'
+/* eslint-disable */
+import { combineReducers } from 'redux';
+import layoutCombinedReducer from './redux/indexReducer.js';
 
-let reducers = [layoutCombinedReducer];
-let commonReducer = {};
+const reducers = [layoutCombinedReducer];
+const commonReducer = {};
 
-for(let i = 0; i < reducers.length; ++i) {
-    let properties = Object.keys(reducers[i]);
-    for(let j = 0; j < properties.length; ++j) {
-        commonReducer[properties[j]] = reducers[i][properties[j]];
-    }
+for (let i = 0; i < reducers.length; ++i) {
+  const properties = Object.keys(reducers[i]);
+  for (let j = 0; j < properties.length; ++j) {
+    commonReducer[properties[j]] = reducers[i][properties[j]];
+  }
 }
 
 const combineReducer = combineReducers(commonReducer);
